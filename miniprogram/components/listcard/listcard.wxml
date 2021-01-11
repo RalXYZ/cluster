@@ -3,7 +3,7 @@
 <view class="content">
   <view class="type">
     <view class="icon">
-      <image src="{{item.src}}" mode="aspectFit"></image>
+      <image src="{{src}}" mode="aspectFit"></image>
     </view>
     <view class="typetext">
       <text>{{item.type}}</text>
@@ -12,7 +12,7 @@
   <view class="info">
     <view class="title">
       <view class="titleTxt">
-        <text>{{item.title}}</text>
+        <text>{{item.name}}</text>
       </view>
     </view>
     <view class="detail">
@@ -21,12 +21,12 @@
       </text></view>
     <view class="bot">
       <view class="founder">
-        <image class="founder-icon" src="../../image/founder-icon.png"></image>
+        <image class="founder-icon" src="../../images/founder-icon.png"></image>
         <text>局长：{{item.founder}}</text> 
         <view class="sex">
-          <view wx:if="{{item.sex}}"><image class="img" src="../../image/man.png" alt="男"/></view>
+          <view wx:if="{{item.sex}}"><image class="img" src="../../images/man.png" alt="男"/></view>
             <view wx:else>
-              <image class="img" src="../../image/woman.png" alt="女"/>
+              <image class="img" src="../../images/woman.png" alt="女"/>
             </view>
         </view>
       </view>
@@ -35,7 +35,7 @@
   </view>
 </view>
 <view class="progress">
-  <view class="itm" wx:for="{{item.prog}}" wx:key="index" wx:for-item="block">
+  <view class="itm" wx:for="{{progArray}}" wx:key="index" wx:for-item="block">
       <view wx:if="{{block}}" class="filled"></view>
       <view wx:else class="empty"></view>
   </view>

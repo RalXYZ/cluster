@@ -1,11 +1,11 @@
 // pages/list/list.js
-var actslist=require("../../datas/actsdata/acts");
+//var actslist=require("../../datas/actsdata/acts");
 var ziXi=0, pinChe=0, dianYing=0, juCan=0, youXi=0, qiTa=0, quanBu=0;
 var pinDan=0;
 var total;
-total=actslist.acts.length;
+// total=actslist.acts.length;
 quanBu=total;
-var acts=actslist.acts;
+var acts;
 var i;
 for(i=0;i<total;i++)
 {
@@ -33,59 +33,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-    total:total,
     help: "攒局帮助手册",
     top: 0,
-    types: [
-      {
-        "index":'0',
-        "src":"../../images/all.png",
-        "type":"全部",
-        "number": quanBu
-      },
-      {
-        "index":'1',
-        "src":"../../images/game.png",
-        "type":"游戏",
-        "number": youXi
-      },
-      {
-        "index":'2',
-        "src":"../../images/pindan.png",
-        "type": "拼单",
-        "number": pinDan
-      },
-      {
-        "index":'3',
-        "src":"../../images/book.png",
-        "type": "自习",
-        "number": ziXi
-      },
-      {
-        "index":'4',
-        "src":"../../images/eat.png",
-        "type": "聚餐",
-        "number": juCan
-      },
-      {
-        "index":'5',
-        "src":"../../images/movie.png",
-        "type": "电影",
-        "number": dianYing
-      },
-      {
-        "index":'6',
-        "src":"../../images/car.png",
-        "type": "拼车",
-        "number": pinChe
-      },
-      {
-        "index":'7',
-        "src":"../../images/other.png",
-        "type": "其他",
-        "number": qiTa
-      }
-    ],
   },
   viewAct: function()
   {
@@ -150,10 +99,131 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.setData({
-      acts: actslist.acts
-    });
+    this.getParticipate();
+    // this.setData({
+    //   acts: actslist.acts
+    // });
     console.log("活动数量为:"+total);
+  },
+  getParticipate: function() {
+    const db = wx.cloud.database();
+    db.collection("set").field({
+      name: true,
+      type: true,
+      detail: true,
+      region: true,
+      date: true,
+      time: true,
+      sum: true,
+      prog: true,
+      founder: true,
+    }).get({
+      success: res => {
+        let actslist = [];
+        res.data.forEach(function (item, index) {
+          let participateEle = {
+            _id: item._id,
+            name: item.name,
+            type: item.type,
+            detail: item.detail,
+            region: item.region,
+            date: item.date,
+            time: item.time,
+            sum: item.sum,
+            prog: item.prog,
+            founder: item.founder
+          };
+          actslist.push(participateEle)
+        })
+        total = actslist.length;
+        quanBu = actslist.length;
+        acts = actslist;
+        var i;
+        for(i=0;i<total;i++) {
+          if(acts[i].type=="拼单")
+            pinDan++;
+          if(acts[i].type=="拼车")
+            pinChe++;
+          if(acts[i].type=="自习")
+            ziXi++;
+          if(acts[i].type=="电影")
+            dianYing++;
+          if(acts[i].type=="聚餐")
+            juCan++;
+          if(acts[i].type=="其他")
+            qiTa++;
+          if(acts[i].type=="游戏")
+            youXi++;
+        }
+        this.creatTypes()
+        this.setData({
+          acts: actslist,
+          total: actslist.length
+        })
+      },
+      fail: err => {
+        wx.showToast({
+          title: 'Query record failed',
+          icon: 'none'
+        })
+      }
+    })
+  },
+
+  creatTypes() {
+    var types = [
+      {
+        "index":'0',
+        "src":"../../images/all.png",
+        "type":"全部",
+        "number": quanBu
+      },
+      {
+        "index":'1',
+        "src":"../../images/game.png",
+        "type":"游戏",
+        "number": youXi
+      },
+      {
+        "index":'2',
+        "src":"../../images/pindan.png",
+        "type": "拼单",
+        "number": pinDan
+      },
+      {
+        "index":'3',
+        "src":"../../images/book.png",
+        "type": "自习",
+        "number": ziXi
+      },
+      {
+        "index":'4',
+        "src":"../../images/eat.png",
+        "type": "聚餐",
+        "number": juCan
+      },
+      {
+        "index":'5',
+        "src":"../../images/movie.png",
+        "type": "电影",
+        "number": dianYing
+      },
+      {
+        "index":'6',
+        "src":"../../images/car.png",
+        "type": "拼车",
+        "number": pinChe
+      },
+      {
+        "index":'7',
+        "src":"../../images/other.png",
+        "type": "其他",
+        "number": qiTa
+      }
+    ];
+    this.setData({
+      types: types
+    })
   },
 
   /**
@@ -167,7 +237,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    
   },
 
   /**

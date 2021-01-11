@@ -47,5 +47,5 @@ Component({
       this.triggerEvent('myevent', {typeDetail:typeDetail},{});
       /* console.log(typeDetail); */
     }
-  }
+  },
 })
