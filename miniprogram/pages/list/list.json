@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "listcard":"../../components/listcard/listcard",
+    "typeList":"../../components/typelist/typeList"
+  },
+  "navigationBarTitleText": "攒局列表"
+}

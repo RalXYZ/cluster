@@ -1,0 +1,6 @@
+<!--component/typelist/typeList.wxml-->
+<!-- <text>component/typelist/typeList.wxml</text> -->
+<view class="type" bind:tap="handleClick" >
+  <image src="{{item.src}}" class="icon" mode="aspectFit"></image>
+  <text>{{item.type}}:{{item.number}}</text>
+</view>

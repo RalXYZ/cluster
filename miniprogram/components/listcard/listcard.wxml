@@ -1,0 +1,47 @@
+<!--component/listcard/listcard.wxml-->
+<!-- <text>component/listcard/listcard.wxml</text> -->
+<view class="content">
+  <view class="type">
+    <view class="icon">
+      <image src="{{item.src}}" mode="aspectFit"></image>
+    </view>
+    <view class="typetext">
+      <text>{{item.type}}</text>
+    </view>
+  </view>
+  <view class="info">
+    <view class="title">
+      <view class="titleTxt">
+        <text>{{item.title}}</text>
+      </view>
+    </view>
+    <view class="detail">
+      <text class="detaiTxt">
+        {{item.detail}}
+      </text></view>
+    <view class="bot">
+      <view class="founder">
+        <image class="founder-icon" src="../../image/founder-icon.png"></image>
+        <text>局长：{{item.founder}}</text> 
+        <view class="sex">
+          <view wx:if="{{item.sex}}"><image class="img" src="../../image/man.png" alt="男"/></view>
+            <view wx:else>
+              <image class="img" src="../../image/woman.png" alt="女"/>
+            </view>
+        </view>
+      </view>
+      <view class="time">{{item.time}}分钟前</view>
+    </view>
+  </view>
+</view>
+<view class="progress">
+  <view class="itm" wx:for="{{item.prog}}" wx:key="index" wx:for-item="block">
+      <view wx:if="{{block}}" class="filled"></view>
+      <view wx:else class="empty"></view>
+  </view>
+</view>
+
+<!-- <view class="progress" wx:for="{{item.prog}}" wx:key="index" wx:for-item="block">
+      <view wx:if="{{block}}" class="filled"></view>
+      <view wx:else class="empty"></view>
+</view> -->

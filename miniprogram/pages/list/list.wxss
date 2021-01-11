@@ -1,0 +1,52 @@
+/* pages/list/list.wxss */
+page{
+  background-color: #FBE9E7;
+}
+.line{
+  width: 100%;
+  height: 5rpx;
+  background-color: #835858;
+  margin-bottom: 10rpx;
+}
+.totalNumber{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.totalNumber text{
+  color: #463333;
+  font-size: 50rpx;
+}
+.container{
+  padding: 0;
+}
+.tpList{
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  height: 100rpx;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-bottom: 50rpx;
+}
+.count{
+  margin: 8rpx;
+  text-align: center;
+}
+.totalNumber{
+  align-self: flex-start;
+  padding: 8rpx;
+}
+.topnavFixed{
+  border-top-left-radius:20rpx;
+  border-top-right-radius:20rpx;
+  position:fixed;
+  top:0rpx;
+  z-index: 1;
+  background-color: #FBE9E7;
+  }
+  .topnavAbsolute{
+  border-top-left-radius:20rpx;
+  border-top-right-radius:20rpx;
+  }
+  

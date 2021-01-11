@@ -1,0 +1,23 @@
+<!--pages/list/list.wxml-->
+<!-- <text>pages/list/list.wxml</text> -->
+<view class="container">
+  <!--   <view class="help">
+  <text class="helpTxt" bindtap="viewHelp">{{help}}</text></view> -->
+  <view class="totalNumber"> <text>正在进行中的局：{{total}}</text></view>
+  <view class="line"></view>
+  <view class="{{scrollTop>50 ? 'topnavFixed' : 'topnavAbsolute'}}" >
+    <view class="tpList">
+    <view class="count" wx:for="{{types}}" wx:for-item="type" data-id="{{index}}" bindtap="readColor">
+      <view wx:if="{{index == id}}">
+        <typeList style="background-color:#FFDFDD" item="{{type}}" id="typelist" bind:myevent="getType"></typeList>
+      </view>
+      <view wx:else>
+        <typeList style="background-color:#F0F8FF" item="{{type}}" id="typelist" bind:myevent="getType"></typeList>
+      </view>
+    </view>
+  </view>
+  </view>
+  <view wx:for="{{acts}}" wx:for-item="act" wx:key="index">
+    <listcard item="{{act}}" bindtap="viewAct"></listcard>
+  </view>
+</view>

@@ -1,0 +1,20 @@
+/* component/typelist/typeList.wxss */
+.type{
+  background-color:inherit;
+  border-radius: 10rpx;
+  padding: 0 10rpx;
+  display: flex;
+  border-style: solid;
+  border-color: #C5908E;
+}
+.type text{
+  color: #463333;
+  font-size: 33rpx;
+  font-weight: 510;
+  position: relative;
+  bottom: 4rpx;
+}
+.icon{
+  width: 35rpx;
+  height: 35rpx;
+}
