@@ -1,0 +1,20 @@
+<!--index.wxml-->
+<view>
+  <view class="userinfo">
+    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 使用微信登陆 </button>
+    <block wx:else>
+      <view class = "info">
+        <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+        <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+        <!--<text class="vip"></text>-->
+      </view>
+      
+      <text class="like">我参加的</text>
+      <view wx:for="{{participateList}}"  wx:for-item="item" wx:for-index="index" wx:key="index">
+        <activityItem item="{{item}}"/>
+      </view>
+
+      <text class="like">我发起的</text>
+    </block>
+  </view>
+</view>

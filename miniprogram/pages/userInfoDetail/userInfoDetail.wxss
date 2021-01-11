@@ -1,0 +1,66 @@
+/* miniprogram/pages/userInfoDetail/userInfoDetail.wxss */
+page {
+  background-color: #FBE9E7;
+}
+
+.main-title {
+  padding: 40rpx 0;
+  text-align: center;
+}
+
+.main-title text {
+  font-size: xx-large;
+  color: #C86083;
+  font-weight: bold;
+}
+
+.cluster {
+  display: flex;
+  flex-wrap: nowrap;
+  margin: 16rpx;
+  height: 64rpx;
+}
+
+.cluster text {
+  width: 80rpx;
+}
+
+textarea {
+  padding: 8rpx;
+  color: #886765;
+  border: 6rpx solid #B89795;
+  border-radius: 16rpx;
+  background-color: #00000008;
+}
+
+.simple-textarea textarea {
+  height: 44rpx;
+}
+
+.title {
+  margin-top: 6rpx;
+  font-size: large;
+  color: #C86083;
+  font-weight: bold;
+  margin-right: 16rpx;
+}
+
+.detail textarea {
+  height: 200rpx;
+}
+
+radio-group {
+  margin-top: 6rpx;
+}
+
+label {
+  margin-right: 16rpx;
+  color: #886765;
+}
+
+button {
+  margin: 240rpx;
+  background-color: #C86083;
+  color: white;
+  border-radius: 16rpx;
+}

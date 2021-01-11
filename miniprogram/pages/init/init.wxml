@@ -1,0 +1,116 @@
+<!--index.wxml-->
+<page>
+    <view class="content">
+        <form bindsubmit="formSubmit" 
+        id="activityInfor" class="information">
+
+        <view class="cluster">
+            <view class="title">活动类型</view>
+            <!--  下拉框  -->
+            <view class="selectBox">
+                <view class="select" catchtap='selectTap'>
+                        <text class="selectText">{{selectData[index]}}</text>
+                        <image src="../../images/icons/direDownLight2.svg"
+                        background-size="contain" class='selectImg {{selectShow&&"selectImgRotate"}}'></image>
+                </view>
+                <view class="optionBox" style="height: {{selectShow?(selectData.length*58):0}}rpx;">
+                    <text class="option" catchtap='optionTap'
+                    wx:for="{{selectData}}" wx:key="this" data-index="{{index}}" >{{item}}</text>
+                </view>
+            </view>
+        </view>
+
+        <view class="cluster">
+            <view class="headLine">
+                <view class="title">活动主题</view>
+                <view class="headLineArea">
+                    <input name="name" type="text" placeholder="请输入活动主题" class="headLineInput"></input>
+                </view>
+            </view>
+        </view>
+        
+        <view class="line"></view>
+
+        <view class="cluster">
+            <view class="inforDetail">
+                <view class="title">活动详情</view>
+                <view class="input">
+                    <textarea class="inputArea" name="details" value="{{details}}" 
+                    placeholder="请简述活动内容等基本信息"></textarea>
+                </view>
+            </view>
+        </view>
+
+        <view style="position: relative; top: 15rpx;">
+            <view class="line"></view>
+        </view>
+
+        <view style="padding: 20rpx 0 0 0;"class="cluster">
+            <view class="dateInfor">
+                <view class="title">活动日期</view>
+                <picker class="date" mode="date" value="{{date}}" 
+                    start="2015-09-01" end="2021-02-02" bindchange="bindDateChange">
+                    <view class="picker">{{date}}</view>
+                </picker>
+            </view>
+        </view>
+
+        <view class="cluster">
+            <view class="title">开始时间</view>
+            <picker class="time" mode="time" value="{{time}}" start="09:01" end="21:01" bindchange="bindTimeChange">
+                <view class="picker"> {{time}} </view>
+            </picker>
+        </view>
+
+        <view class="line"></view>
+
+        <view class="cluster">
+            <view style="margin:25rpx 0 15rpx 0;" class="people">
+                <view class="title">攒局人数</view>
+                <view class="sum">
+                    <view class="slider">
+                        <view class="sliderBox">
+                            <view class="sliderBtn" style="margin-left:{{(value-min)*(102/(max-min))-7}}%;"></view>
+                            <view class="sliderLine"></view>
+                            <view class="sliderLineActive" style="width:{{(value-min)*(102/(max-min))-7}}%;"></view>
+                            <view class="sliderNumber">
+                                <block wx:if="{{min>=0}}">
+                                    <block wx:for="{{max+1}}" wx:key="index">
+                                        <text class="{{value==item?'active':''}}" style="left:{{(item-min)*(100/(max-min))-2 }}%;" >{{item}}</text>
+                                    </block>
+                                </block>
+                                <block wx:else>
+                                    <block wx:for="{{(max-min)+1}}" wx:key="index">
+                                        <text class="{{value==(item+min)?'active':''}}" style="left:{{ (item)*(102/(max-min))-2 }}%" >{{item+min}}</text>
+                                    </block>
+                                </block>
+                            </view>
+                        </view>
+                        <slider block-size="28" bindchange="sliderChange" bindchanging="sliderChanging"
+                            min="{{min}}" max="{{max}}" value="{{value}}"></slider>
+                    </view>
+                </view>
+            </view>
+        </view>
+
+        <view class="line"></view>
+
+        <view class="cluster">
+            <div class="place">
+                <view class="title">位置信息</view>
+                <view class="displayPlace" name="position" >
+                    <input name="region" class="regionInfor" type="text"></input>
+                    <image class="getPlace" src="{{posSrc}}"></image>
+                </view>
+            </div> 
+        </view>
+
+
+        <view class="btnArea">
+            <button form-type="submit" type="primary" size="default" class="confirm" >确认发起</button>
+        </view>
+        </form>
+
+    </view>
+</page>
+

@@ -1,0 +1,14 @@
+<!--components/activityItem/activityItem.wxml-->
+<view class="list-item" bindtap="handleClick">
+  <view class="profile">
+    <!--<image class="banner" src="{{item.poster}}" mode="aspectFit"/>-->
+    <!--<view class="banner" style="background-image: url({{src}})" mode="aspectFit"></view>-->
+    <image class="image" src="{{src}}" mode="aspectFit"/>
+    <view class="type">{{item.type}}</view>
+  </view>
+  <view class="content">
+    <text class="name">{{item.name}}</text>
+    <text class="detail">{{item.detail}}</text>
+    <text class="time">{{item.date}} {{item.time}}</text>
+  </view>
+</view>

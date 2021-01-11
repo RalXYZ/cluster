@@ -1,0 +1,41 @@
+/**index.wxss**/
+page {
+  background-color: #FBE9E7;
+}
+
+.like {
+  margin-top: 40rpx;
+  margin-left: 16rpx;
+  font-size: x-large;
+  color: #C86083;
+  font-weight: bold;
+}
+
+
+
+.vip {
+  color: pink;
+}
+
+.userinfo {
+  display: flex;
+  flex-direction: column;
+}
+
+.info {
+  margin-top: 100rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.userinfo-avatar {
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx;
+  border-radius: 16rpx;
+}
+
+.userinfo-nickname {
+  color: #886765;
+}

@@ -1,0 +1,69 @@
+<!--pages/inforDetail/inforDeatil.wxml-->
+<page>
+    <view class="content">
+        <view class="cluster">
+            <view class="founder">
+                <view class="title">活动发起人</view>
+                <view class="founderInfor">
+                    <image class="founderSex" src="../../images/icons/girl1.svg"></image>
+                    <view class="founderName">{{activity.founder}}</view>
+                </view>
+            </view>
+        </view>
+        <view class="line"></view>
+
+        <view class="cluster">
+            <view class="sum">
+                <view class="title">活动总人数</view>
+                <view class="num">{{activity.sum}}</view>
+            </view>
+        </view>
+        <view class="cluster">
+            <view class="participation">
+                <view class="title">已参加人员</view>
+                <view class="participators">{{activity.participates}}</view>
+            </view>
+        </view>
+        <view class="line"></view>
+
+        <view class="cluster">
+            <view class="headline">
+                <view class="title">活动主题：{{activity.type}}</view>
+                <view class="headlineInfor">{{activity.headline}}</view>
+            </view>
+        </view>
+        <view class="cluster">
+            <view class="activity">
+                <view class="activityInfor">{{activity.detail}}</view>
+            </view>
+        </view>
+        <view class="line"></view>
+
+        <view class="cluster">
+            <view class="date">
+                <view class="title">活动日期</view>
+                <view class="dateInfor">{{activity.date}}</view>
+            </view>
+        </view>
+
+        <view class="cluster">
+            <view class="time">
+                <view class="title">活动时间</view>
+                <view class="timeInfor">{{activity.time}}</view>
+            </view>
+        </view>
+        <view class="line"></view>
+
+        <view class="cluster">
+            <view class="region">
+                <view class="title">活动地点</view>
+                <view class="regionInfor">{{activity.region}}</view>
+            </view>
+        </view>
+
+        <view class="btnArea">
+            <button class="confirm" form-type="submit" disabled="{{btn.state}}">{{btn.value}}</button>
+        </view>
+    </view>
+
+</page>

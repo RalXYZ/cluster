@@ -1,0 +1,114 @@
+/* pages/inforDetail/inforDeatil.wxss */
+page {
+    background-color: #FBE9E7;
+}
+.page{
+    width: 100%;
+}
+.content {
+    height: fit-content;
+    margin: 30rpx 30rpx 0 30rpx;
+    font-size: 35rpx;
+}
+
+.cluster {
+    margin: 20rpx 0rpx 0 10rpx;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    flex: 1;
+}
+.line {
+    width: auto;
+    height: 6rpx;
+    background: #cec4c456;
+    margin: 25rpx 0 15rpx 0;
+}
+  
+.founder, .sum, .date, .time, .region, .headline {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    flex: 1;  
+}
+.num, .dateInfor, .timeInfor, .regionInfor, .founderName, .headlineInfor {
+    padding: 12rpx 20rpx;
+}
+.headlineInfor {
+    text-decoration: #aa6c6c;
+    text-decoration-style: solid;
+    text-decoration-line: underline;
+    line-height: 60rpx; 
+}
+.activity {
+    margin-bottom: 10rpx;
+}
+
+.title {
+    font-size: 40rpx;
+    font-weight: bold;
+    margin: 10rpx 0;
+    color: rgb(29, 21, 21);
+}
+.founderInfor {
+    display: flex;
+    flex-wrap: wrap;
+    flex: 1;
+    justify-content: flex-end;
+    margin-left: auto;
+}
+.founderSex {
+    width: 70rpx;
+    height: 70rpx;
+    margin-right: 10rpx;
+}
+
+.activity {
+    border-radius: 18rpx;
+    border-top-width: 3rpx;
+    border-left-width: 3rpx;
+    border-right-width:10rpx;
+    border-bottom-width: 5rpx;
+    border-color: #aa6c6c;
+    border-style: groove;
+    background-color: #e6c7c4b4;
+    font-size: small;
+    width: 90%;
+    padding: 20rpx;
+}
+
+.btnArea {
+    margin-top: 50rpx;
+    display: flex;
+    justify-items: center;
+    flex-wrap: wrap;
+  }
+.btnArea button {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.confirm {
+    width: 280rpx;
+    background: linear-gradient(#9b5f5f, #9b5f5f);
+    border-radius: 12px;
+    box-shadow: 6px 4px 4px #666666;
+    font-family: Arial;
+    color: #fafafa !important;
+    text-decoration: none; 
+}
+.confirm[disabled] {
+    width: 280rpx;
+    background: linear-gradient(#9b5f5f63, #9b5f5f63);
+    border-radius: 12px;
+    text-shadow: 3px 2px 1px #a6b4ee;
+    box-shadow: 6px 4px 4px #666666;
+    font-family: Arial;
+    color: #fafafa !important;
+    text-decoration: none;
+  }
+.confirm:hover {
+    background: linear-gradient(#aa6c6c, #aa6c6c);   
+}

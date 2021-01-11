@@ -1,0 +1,37 @@
+{
+  "pages": [
+    "pages/init/init",
+    "pages/index/index",
+    "pages/userInfoDetail/userInfoDetail",
+    "pages/inforDetail/inforDeatil"
+  ],
+  "window": {
+    "backgroundColor": "#FBE9E7",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#F3E1DF",
+    "navigationBarTitleText": "攒局",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "backgroundColor": "#F3E1DF",
+    "selectedColor": "#C3174F",
+    "color": "#886765",
+    "position": "bottom",
+    "list": [
+      {
+        "pagePath": "pages/init/init",
+        "text": "发起",
+        "iconPath": "images/add-un.png",
+        "selectedIconPath": "images/add.png"
+      },
+      {
+        "pagePath": "pages/index/index",
+        "text": "我的",
+        "iconPath": "images/me-un.png",
+        "selectedIconPath": "images/me.png"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json",
+  "style": "v2"
+}

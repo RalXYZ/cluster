@@ -1,0 +1,31 @@
+<!--miniprogram/pages/userInfoDetail/userInfoDetail.wxml-->
+<view class="section simple-textarea">
+  <view class="main-title">
+    <text>个人信息</text>
+  </view>
+  <form bindsubmit="bindFormSubmit">
+    <view class="cluster">
+      <text class="title">姓名</text>
+      <textarea placeholder="请填写真实姓名" name="name" placeholder-style="color:#D8B7B5;"/>
+    </view>
+
+    <view class="cluster">
+      <text class="title">性别</text>
+      <radio-group name="sex">
+        <label><radio value="male" color="#C86083"/>男</label>
+        <label><radio value="female" color="#C86083"/>女</label>
+      </radio-group>
+    </view>
+
+    <view class="cluster simple-textarea">
+      <text class="title">电话</text>
+      <textarea placeholder="请填写电话号码" name="tel" placeholder-style="color:#D8B7B5;"/>
+    </view>
+
+    <view class="cluster detail">
+      <text class="title">简介</text>
+      <textarea placeholder="请填写较为详细的个人介绍" name="info" placeholder-style="color:#D8B7B5;"/>
+    </view>
+    <button form-type="submit"> 提交 </button>
+  </form>
+</view>

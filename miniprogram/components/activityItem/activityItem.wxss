@@ -1,0 +1,73 @@
+/* components/activityItem/activityItem.wxss */
+
+.list-item {
+  background-color: #00000008;
+  border-radius: 16rpx;
+  display: flex;
+  align-items: center;
+  /*transition: all 0.3;*/
+  height: 160rpx;
+  margin: 8rpx 16rpx;
+}
+
+.list-item:active {
+  background-color: #232030;
+}
+
+.profile {
+  margin: 16rpx;
+  display: flex;
+  flex-direction: column;
+}
+
+.type {
+  text-align: center;
+  color: #C86083;
+  font-size: 28rpx;
+  font-weight: bold;
+}
+
+.content {
+  flex: 1;
+  font-size: 25rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.name {
+  color: #886765;
+  width: 550rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-weight: bold;
+  font-size: 40rpx;
+  margin-bottom: 8rpx;
+}
+
+.detail {
+  color: #886765B0;
+  
+}
+.time {
+  color: #886765B0;
+}
+
+.banner {
+  height: 80rpx;
+  width: 80rpx;
+  border-radius: 15rpx;
+  background-size: cover;
+}
+
+.image {
+  height: 80rpx;
+  width: 80rpx;
+}
+
+.favor {
+  width: 50rpx;
+  height: 50rpx;
+  padding-right: 25rpx;
+}
