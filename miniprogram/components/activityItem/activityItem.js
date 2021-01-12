@@ -41,6 +41,18 @@ Component({
         case("游戏"):
           src = "../../images/game.png";
           break;
+        case("拼单"):
+          src = "../../images/pindan.png";
+          break;
+        case("电影"):
+          src = "../../images/movie.png";
+          break;
+        case("拼车"):
+          src = "../../images/car.png";
+          break;
+        case("其他"):
+          src = "../../images/other.png";
+          break;
       }
       this.setData({
         src: src
