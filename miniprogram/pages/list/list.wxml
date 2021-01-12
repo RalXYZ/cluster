@@ -18,6 +18,6 @@
   </view>
   </view>
   <view wx:for="{{acts}}" wx:for-item="act" wx:key="index">
-    <listcard item="{{act}}" bindtap="viewAct"></listcard>
+    <listcard item="{{act}}"></listcard>
   </view>
 </view>

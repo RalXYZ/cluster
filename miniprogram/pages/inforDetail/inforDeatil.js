@@ -1,4 +1,7 @@
 // pages/inforDetail/inforDeatil.js
+
+const app = getApp()
+
 Page({
 
     /**
@@ -36,9 +39,13 @@ Page({
         this.setData({
             id: id,
         })
+    },
 
+    initData() {
         const db = wx.cloud.database();
         db.collection('set').doc(this.data.id).field({
+            is_founder: true,
+            is_participant: true,
             founder: true,
             name: true,
             type: true,
@@ -48,12 +55,13 @@ Page({
             time: true,
             sum: true,
             prog: true,
+            sex: true,
+            participates: true,
         }).get({
           success: res => {
             this.setData({
                 activity: res.data
             })
-            console.log(res.data)
             var crtNum = 0;
             crtNum += this.data.activity.prog;
             if (this.data.activity.sum == crtNum) {
@@ -61,6 +69,16 @@ Page({
                     "btn.state": true,
                     "btn.value": "已满员"
                 })
+            } else if (this.data.activity.is_founder) {
+                this.setData({
+                    "btn.state": true,
+                    "btn.value": "您是发起者"
+                }) 
+            } else if (this.data.activity.is_participant) {
+                this.setData({
+                    "btn.state": true,
+                    "btn.value": "您已加入"
+                }) 
             } else {
                 this.setData({
                     "btn.state": false,
@@ -75,6 +93,32 @@ Page({
         })
     },
 
+    handleJoin() {
+        if (this.data.activity.participates == undefined) {
+            this.data.activity.participates = []
+        }
+        this.data.activity.participates.push(app.globalData.name);
+        this.data.activity.prog += 1;
+        const db = wx.cloud.database();
+        db.collection('set').doc(this.data.id).update({
+            data: {
+                participates: this.data.activity.participates,
+                is_participant: true,
+                prog: this.data.activity.prog,
+            },
+            success: function(res) {
+                wx.showToast({
+                    title: '加入成功',
+                })
+                console.log("joined");
+                console.log(res);
+                this.initData();
+            },
+            fail: err => {
+                console.log(err);
+            }
+        })
+    },
 
     /**
      * 生命周期函数--监听页面初次渲染完成
@@ -87,7 +131,7 @@ Page({
      * 生命周期函数--监听页面显示
      */
     onShow: function () {
-
+        this.initData();
     },
 
     /**

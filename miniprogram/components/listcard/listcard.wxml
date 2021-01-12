@@ -1,6 +1,6 @@
 <!--component/listcard/listcard.wxml-->
 <!-- <text>component/listcard/listcard.wxml</text> -->
-<view class="content">
+<view class="content" bindtap="viewAct">
   <view class="type">
     <view class="icon">
       <image src="{{src}}" mode="aspectFit"></image>

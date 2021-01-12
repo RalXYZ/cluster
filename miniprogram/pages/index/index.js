@@ -18,6 +18,7 @@ Page({
   },
   onShow: function() {
     this.getParticipate();
+    this.getFounder();
   },
   onLoad: function () {
     if (app.globalData.userInfo) {
@@ -25,7 +26,7 @@ Page({
         userInfo: app.globalData.userInfo,
         hasUserInfo: true
       })
-    } else if (this.data.canIUse){
+    } else if (this.data.canIUse) {
       // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
       // 所以此处加入 callback 以防止这种情况
       app.userInfoReadyCallback = res => {
@@ -34,6 +35,12 @@ Page({
           hasUserInfo: true
         })
       }
+      wx.getUserInfo({
+        success: res => {
+          app.globalData.userInfo = res.userInfo;
+          console.log(res)
+        }
+      })
     } else {
       // 在没有 open-type=getUserInfo 版本的兼容处理
       wx.getUserInfo({
@@ -54,7 +61,9 @@ Page({
 
   getParticipate: function() {
     const db = wx.cloud.database();
-    db.collection("set").field({
+    db.collection("set").where({
+      is_participant: true
+    }).field({
       name: true,
       type: true,
       detail: true,
@@ -63,6 +72,7 @@ Page({
       time: true,
       sum: true,
       prog: true,
+      sex: true,
     }).get({
       success: res => {
         let participateDb = [];
@@ -76,12 +86,57 @@ Page({
             date: item.date,
             time: item.time,
             sum: item.sum,
-            prog: item.prog
+            prog: item.prog,
+            sex: item.sex
           };
           participateDb.push(participateEle)
         })
         this.setData({
           participateList: participateDb
+        })
+      },
+      fail: err => {
+        wx.showToast({
+          title: 'Query record failed',
+          icon: 'none'
+        })
+      }
+    })
+  },
+  getFounder: function() {
+    const db = wx.cloud.database();
+    db.collection("set").where({
+      is_founder: true
+    }).field({
+      name: true,
+      type: true,
+      detail: true,
+      region: true,
+      date: true,
+      time: true,
+      sum: true,
+      prog: true,
+      sex: true,
+    }).get({
+      success: res => {
+        let founderDb = [];
+        res.data.forEach(function (item, index) {
+          let founderEle = {
+            _id: item._id,
+            name: item.name,
+            type: item.type,
+            detail: item.detail,
+            region: item.region,
+            date: item.date,
+            time: item.time,
+            sum: item.sum,
+            prog: item.prog,
+            sex: item.sex
+          };
+          founderDb.push(founderEle)
+        })
+        this.setData({
+          founderList: founderDb
         })
       },
       fail: err => {

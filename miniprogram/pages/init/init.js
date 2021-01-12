@@ -2,6 +2,8 @@
 //var QQMapWX = require("../../utils/qqmap-wx-jssdk.js");
 //var qqmapsdk;
 
+const app = getApp()
+
 var pageData = {}
 for (var i = 1; i <= 1; ++i) {
   (function (index) {
@@ -84,6 +86,9 @@ Page({
     })
     db.collection("set").add({
       data: {
+        is_founder: true,
+        founder: app.globalData.name,
+        sex: app.globalData.sex,
         name: this.data.name,
         detail: this.data.detail,
         sum: this.data.value,

@@ -36,13 +36,6 @@ Page({
     help: "攒局帮助手册",
     top: 0,
   },
-  viewAct: function()
-  {
-    console.log("点击");
-    wx.navigateTo({
-      url: '../inforDetail/inforDetail'
-    })
-  },
   viewHelp: function()
   {
     console.log("帮助");
@@ -99,11 +92,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.getParticipate();
-    // this.setData({
-    //   acts: actslist.acts
-    // });
-    console.log("活动数量为:"+total);
+    // console.log("活动数量为:"+total);
   },
   getParticipate: function() {
     const db = wx.cloud.database();
@@ -117,6 +106,7 @@ Page({
       sum: true,
       prog: true,
       founder: true,
+      sex: true,
     }).get({
       success: res => {
         let actslist = [];
@@ -131,13 +121,15 @@ Page({
             time: item.time,
             sum: item.sum,
             prog: item.prog,
-            founder: item.founder
+            founder: item.founder,
+            sex: item.sex
           };
           actslist.push(participateEle)
         })
         total = actslist.length;
         quanBu = actslist.length;
         acts = actslist;
+        ziXi=0, pinChe=0, dianYing=0, juCan=0, youXi=0, qiTa=0;
         var i;
         for(i=0;i<total;i++) {
           if(acts[i].type=="拼单")
@@ -230,14 +222,13 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    
+    this.getParticipate();
   },
 
   /**

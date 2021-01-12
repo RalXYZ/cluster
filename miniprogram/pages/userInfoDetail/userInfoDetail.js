@@ -1,4 +1,7 @@
 // miniprogram/pages/userInfoDetail/userInfoDetail.js
+
+const app = getApp()
+
 Page(
   {
   /**
@@ -13,6 +16,10 @@ Page(
 
   bindFormSubmit: function(e) {
     console.log(e.detail.value);
+    app.globalData.name = e.detail.value.name;
+    app.globalData.sex = e.detail.value.sex;
+    app.globalData.tel = e.detail.value.tel;
+    app.globalData.info = e.detail.value.info;
     this.setData({
       name: e.detail.value.name,
       sex: e.detail.value.sex,
@@ -26,6 +33,7 @@ Page(
     const db = wx.cloud.database();
     db.collection("user_info").add({
       data: {
+        nick_name: app.globalData.userInfo.nickName,
         name: this.data.name,
         sex: this.data.sex,
         tel: this.data.tel,

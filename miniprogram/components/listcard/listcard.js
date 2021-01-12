@@ -21,7 +21,12 @@ Component({
    * 组件的方法列表
    */
   methods: {
-
+    viewAct: function() {
+      console.log("点击");
+      wx.navigateTo({
+        url: `../inforDetail/inforDeatil?id=${this.properties.item._id}`
+      })
+    },
   },
 
   lifetimes: {

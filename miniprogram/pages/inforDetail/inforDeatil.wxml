@@ -62,7 +62,7 @@
         </view>
 
         <view class="btnArea">
-            <button class="confirm" form-type="submit" disabled="{{btn.state}}">{{btn.value}}</button>
+            <button bindtap="handleJoin" class="confirm" form-type="submit" disabled="{{btn.state}}">{{btn.value}}</button>
         </view>
     </view>
 

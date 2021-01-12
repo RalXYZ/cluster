@@ -3,6 +3,10 @@ page {
   background-color: #FBE9E7;
 }
 
+.login{
+  margin-top: 320rpx;
+}
+
 .like {
   margin-top: 40rpx;
   margin-left: 16rpx;

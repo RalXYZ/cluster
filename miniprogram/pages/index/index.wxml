@@ -1,7 +1,7 @@
 <!--index.wxml-->
 <view>
   <view class="userinfo">
-    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 使用微信登陆 </button>
+    <button class="login" wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 使用微信登陆 </button>
     <block wx:else>
       <view class = "info">
         <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
@@ -15,6 +15,9 @@
       </view>
 
       <text class="like">我发起的</text>
+      <view wx:for="{{founderList}}"  wx:for-item="item" wx:for-index="index" wx:key="index">
+        <activityItem item="{{item}}"/>
+      </view>
     </block>
   </view>
 </view>
