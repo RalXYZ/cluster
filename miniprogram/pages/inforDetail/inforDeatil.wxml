@@ -5,11 +5,19 @@
             <view class="founder">
                 <view class="title">活动发起人</view>
                 <view class="founderInfor">
-                    <image class="founderSex" src="../../images/icons/girl1.svg"></image>
+                    <image class="founderSex" src="{{activity.sex?imgSrc[0]:imgSrc[1]}}"></image>
                     <view class="founderName">{{activity.founder}}</view>
                 </view>
             </view>
         </view>
+        <view class="cluster">
+            <view class="founderTel">
+                <view class="title">联系方式</view>
+                <view class="foundertel"></view>
+                    <image src="../../images/icons/电话.svg"></image>
+                    <view class="founderNumber">{{activity.tel}}</view>
+                </view>
+            </view>
         <view class="line"></view>
 
         <view class="cluster">

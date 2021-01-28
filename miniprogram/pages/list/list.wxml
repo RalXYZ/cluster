@@ -1,9 +1,17 @@
 <!--pages/list/list.wxml-->
 <!-- <text>pages/list/list.wxml</text> -->
 <view class="container">
-  <!--   <view class="help">
-  <text class="helpTxt" bindtap="viewHelp">{{help}}</text></view> -->
-  <view class="totalNumber"> <text>正在进行中的局：{{total}}</text></view>
+  <view class="head">
+    <view class="totalNumber">
+      <image class="modeChange" src='{{headImg[mode]}}' bindtap="modeChange"></image>
+      <text>正在进行中的局：{{total}}</text>
+    </view>
+    <view class="help" bindtap="viewHelp">
+      <view class="helpTxt">帮助</view>
+      <image class="helpImg" src="../../images/icons/help.svg"></image>
+    </view>
+  </view>
+
   <view class="line"></view>
   <view class="{{scrollTop>50 ? 'topnavFixed' : 'topnavAbsolute'}}" >
     <view class="tpList">
@@ -12,7 +20,7 @@
         <typeList style="background-color:#FFDFDD" item="{{type}}" id="typelist" bind:myevent="getType"></typeList>
       </view>
       <view wx:else>
-        <typeList style="background-color:#F0F8FF" item="{{type}}" id="typelist" bind:myevent="getType"></typeList>
+        <typeList style="background-color:#fff7f7" item="{{type}}" id="typelist" bind:myevent="getType"></typeList>
       </view>
     </view>
   </view>

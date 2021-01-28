@@ -17,7 +17,7 @@
 .titleTxt{
   font-size: 35rpx;
   font-weight: bold;
-  font-family: 'Times New Roman', Times, serif;
+  /*font-family: 'Times New Roman', Times, serif;*/
 }
 .detail {
   display: -webkit-box;
@@ -49,6 +49,7 @@
 }
 
 .type {
+  width: 130rpx;
   padding: 30rpx 20rpx;
   border-right-style: double;
   border-right-width: 10rpx;
@@ -138,6 +139,7 @@
 
 .time {
   color: #835858;
+  width: 100rpx;
 }
 
 .founder text {

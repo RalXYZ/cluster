@@ -1,0 +1,55 @@
+/* pages/help/help.wxss */
+page {
+    background-color: #FBE9E7;
+}
+
+.content {
+    margin: 5rpx 30rpx;
+}
+
+.headline {
+    font-size: x-large;
+    font-weight: bolder;
+    text-shadow: 1px 2px 1px rgb(248, 200, 208);
+    color: #423433;
+    text-align: center;
+    margin: 20rpx
+}
+
+.basicInfor, .advantages, .functionInfor {
+    background-color: #00000010;
+    padding: 15rpx 20rpx;
+    border-radius: 18rpx;
+    border-color: #886765;
+    border-left-width: 3rpx;
+    border-right-width: 10rpx;
+    border-top-width: 3rpx;
+    border-bottom-width: 5rpx;
+    border-style: solid;
+}
+
+
+.basicInfor, .advantages, .functionInfor {
+    margin: 30rpx 22rpx;
+}
+
+.head {
+    margin: 40rpx 0 20rpx 0;
+    text-align: center;
+    font-size: larger;
+    font-weight: bolder;
+    color: #423433;
+    text-shadow: 1px 2px 1px rgb(248, 200, 208);
+    text-decoration-color: #c58c89;
+    text-decoration-style: wavy;
+    text-decoration-line: underline;
+}
+
+.title {
+    font-weight: bold;
+    color: #574745;
+}
+.Ad, .manipulation {
+    color: #574745;
+    padding: 10rpx 0 30rpx 0;
+}

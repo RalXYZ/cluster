@@ -30,7 +30,7 @@
             </view>
         </view>
       </view>
-      <view class="time">{{item.time}}分钟前</view>
+      <view class="time">{{item.time}}</view>
     </view>
   </view>
 </view>

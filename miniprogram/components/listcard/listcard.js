@@ -41,6 +41,7 @@ Component({
           progArray.push(false);
         }
       }
+      console.log(progArray);
       this.setData({
         progArray: progArray
       })

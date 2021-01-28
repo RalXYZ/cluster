@@ -5,7 +5,8 @@
     "pages/init/init",
     "pages/index/index",
     "pages/userInfoDetail/userInfoDetail",
-    "pages/inforDetail/inforDeatil"
+    "pages/inforDetail/inforDeatil",
+    "pages/help/help"
   ],
   "window": {
     "backgroundColor": "#FBE9E7",

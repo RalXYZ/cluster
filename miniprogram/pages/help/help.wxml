@@ -1,0 +1,31 @@
+<!--pages/help/help.wxml-->
+<page>
+    <view class="content">
+        <view class="headline">{{basicInfor.title}}</view>
+        <view class="basicInfor">
+            <text class="source" decode="{{true}}">{{basicInfor.source}}\n</text>
+            <text class="intro" decode="{{true}}">{{basicInfor.intro}}</text>
+        </view>
+
+        <view class="head">我们的优势</view>
+        <view class="advantages">
+                <view class="title">{{advantages[0].title}}</view>
+                <view class="Ad">{{advantages[0].content}}</view>
+                <view class="title">{{advantages[1].title}}</view>
+                <view class="Ad">{{advantages[1].content}}</view>
+                <view class="title">{{advantages[2].title}}</view>
+                <view class="Ad">{{advantages[2].content}}</view>
+            </view>
+
+        <view class="head">操作指南</view>
+        <view class="functionInfor">
+            <view class="title">{{manipulation[0].title}}</view>
+            <view class="manipulation">{{manipulation[0].content}}</view>
+            <view class="title">{{manipulation[1].title}}</view>
+            <view class="manipulation">{{manipulation[1].content}}</view>
+            <view class="title">{{manipulation[2].title}}</view>
+            <view class="manipulation">{{manipulation[2].content}}</view>
+            <view style="font-size:smaller; text-align: center;"class="manipulation">{{manipulation[3].content}}</view>
+        </view>
+    </view>
+</page>

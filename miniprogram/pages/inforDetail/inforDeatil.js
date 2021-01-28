@@ -9,25 +9,13 @@ Page({
      */
     data: {
         id: null,
-        /*
-        activity: {
-            founder: 'Wu Xinbei',
-            participates: [
-                " Zhao Zichen"," Cui Mingyuan" 
-            ],
-            type: '聚餐',
-            headline: '海底捞组团',
-            detail: '微信小程序大作业组队,不卷,能运行就好',
-            sum: 3,
-            date: '2021-01-06',
-            time: '21:21',
-            region: '浙江大学 紫金港校区'
-        },
-        */
         btn: {
             value: '我要参加',
             state: false
-        }
+        },
+        imgSrc: [
+            '../../images/icons/male2.svg','../../images/icons/female3.svg'
+        ]
     },
 
     /**
@@ -55,6 +43,7 @@ Page({
             time: true,
             sum: true,
             prog: true,
+            tel: true,
             sex: true,
             participates: true,
         }).get({
@@ -152,7 +141,10 @@ Page({
      * 页面相关事件处理函数--监听用户下拉动作
      */
     onPullDownRefresh: function () {
-
+        wx.showNavigationBarLoading();
+        this.initData();
+        wx.hideNavigationBarLoading();
+        wx.stopPullDownRefresh();
     },
 
     /**

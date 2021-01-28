@@ -26,14 +26,14 @@ page {
     margin: 25rpx 0 15rpx 0;
 }
   
-.founder, .sum, .date, .time, .region, .headline {
+.founder, .sum, .date, .time, .region, .headline, .founderTel {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     flex-wrap: wrap;
     flex: 1;  
 }
-.num, .dateInfor, .timeInfor, .regionInfor, .founderName, .headlineInfor {
+.num, .dateInfor, .timeInfor, .regionInfor, .founderName, .headlineInfor, .founderNumber {
     padding: 12rpx 20rpx;
 }
 .headlineInfor {
@@ -52,17 +52,22 @@ page {
     margin: 10rpx 0;
     color: rgb(29, 21, 21);
 }
-.founderInfor {
+.founderInfor, .foundertel {
     display: flex;
     flex-wrap: wrap;
     flex: 1;
     justify-content: flex-end;
     margin-left: auto;
 }
-.founderSex {
+.founderSex{
     width: 70rpx;
     height: 70rpx;
     margin-right: 10rpx;
+}
+.founderTel image {
+    width: 60rpx;
+    height: 60rpx;
+    margin-right: 10rpx;  
 }
 
 .activity {
