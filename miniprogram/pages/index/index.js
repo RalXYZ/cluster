@@ -60,92 +60,83 @@ Page({
   },
 
   getParticipate: function() {
-    const db = wx.cloud.database();
-    db.collection("set").where({
-      is_participant: true
-    }).field({
-      name: true,
-      type: true,
-      detail: true,
-      region: true,
-      date: true,
-      time: true,
-      sum: true,
-      prog: true,
-      sex: true,
-    }).get({
-      success: res => {
-        let participateDb = [];
-        res.data.forEach(function (item, index) {
-          let participateEle = {
-            _id: item._id,
-            name: item.name,
-            type: item.type,
-            detail: item.detail,
-            region: item.region,
-            date: item.date,
-            time: item.time,
-            sum: item.sum,
-            prog: item.prog,
-            sex: item.sex
-          };
-          participateDb.push(participateEle)
-        })
-        this.setData({
-          participateList: participateDb
-        })
-      },
-      fail: err => {
-        wx.showToast({
-          title: 'Query record failed',
-          icon: 'none'
-        })
-      }
+    wx.cloud.callFunction({
+      name: 'openid'
+    }).then( r =>{
+      console.log("openid GET success, uid: ", r);
+      const db = wx.cloud.database();
+      db.collection("set").where({
+        participates_openid: r.result.openid,
+      }).get({
+        success: res => {
+          let participateDb = [];
+          res.data.forEach(function (item, index) {
+            let participateEle = {
+              _id: item._id,
+              name: item.name,
+              type: item.type,
+              detail: item.detail,
+              region: item.region,
+              date: item.date,
+              time: item.time,
+              sum: item.sum,
+              prog: item.prog,
+              sex: item.sex
+            };
+            participateDb.push(participateEle)
+          })
+          this.setData({
+            participateList: participateDb
+          })
+        },
+        fail: err => {
+          wx.showToast({
+            title: 'Query record failed',
+            icon: 'none'
+          })
+        }
+      })
     })
   },
   getFounder: function() {
-    const db = wx.cloud.database();
-    db.collection("set").where({
-      is_founder: true
-    }).field({
-      name: true,
-      type: true,
-      detail: true,
-      region: true,
-      date: true,
-      time: true,
-      sum: true,
-      prog: true,
-      sex: true,
-    }).get({
-      success: res => {
-        let founderDb = [];
-        res.data.forEach(function (item, index) {
-          let founderEle = {
-            _id: item._id,
-            name: item.name,
-            type: item.type,
-            detail: item.detail,
-            region: item.region,
-            date: item.date,
-            time: item.time,
-            sum: item.sum,
-            prog: item.prog,
-            sex: item.sex
-          };
-          founderDb.push(founderEle)
-        })
-        this.setData({
-          founderList: founderDb
-        })
-      },
-      fail: err => {
-        wx.showToast({
-          title: 'Query record failed',
-          icon: 'none'
-        })
-      }
+    wx.cloud.callFunction({
+      name: 'openid'
+    }).then( r =>{
+      console.log("openid GET success, uid: ", r);
+      const db = wx.cloud.database();
+      db.collection("set").where({
+        _openid: r.result.openid,
+      }).get({
+        success: res => {
+          let founderDb = [];
+          res.data.forEach(function (item, index) {
+            let founderEle = {
+              _id: item._id,
+              name: item.name,
+              type: item.type,
+              detail: item.detail,
+              region: item.region,
+              date: item.date,
+              time: item.time,
+              sum: item.sum,
+              prog: item.prog,
+              sex: item.sex
+            };
+            founderDb.push(founderEle)
+          })
+          this.setData({
+            founderList: founderDb
+          })
+        },
+        fail: err => {
+          wx.showToast({
+            title: 'Query record failed',
+            icon: 'none'
+          })
+        }
+      })
     })
+    
   },
   getUserInfo: function(e) {
     //console.log(e)

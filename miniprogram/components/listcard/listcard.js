@@ -31,6 +31,15 @@ Component({
 
   lifetimes: {
     attached() {
+      if (this.properties.item.sex == "male") {
+        this.setData({
+          sex: true,
+        })
+      } else if (this.properties.item.sex == "female") {
+        this.setData({
+          sex: false,
+        })
+      }
       let src = undefined
       console.log(this.properties.item)
       var progArray = []

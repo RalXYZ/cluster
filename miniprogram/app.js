@@ -15,5 +15,21 @@ App({
     }
 
     this.globalData = {}
+
+    wx.cloud.callFunction({
+      name: 'openid'
+    }).then( r =>{
+      const db = wx.cloud.database();
+      db.collection("user_info").where({
+        _openid: r.result.openid,
+      }).get({
+        success: res => {
+        this.globalData.name = res.data[0].name;
+        this.globalData.sex = res.data[0].sex;
+        this.globalData.tel = res.data[0].tel;
+        this.globalData.info = res.data[0].info;
+        }
+      })
+    })
   }
 })

@@ -24,7 +24,7 @@
         <image class="founder-icon" src="../../images/founder-icon.png"></image>
         <text>局长：{{item.founder}}</text> 
         <view class="sex">
-          <view wx:if="{{item.sex}}"><image class="img" src="../../images/man.png" alt="男"/></view>
+          <view wx:if="{{sex}}"><image class="img" src="../../images/man.png" alt="男"/></view>
             <view wx:else>
               <image class="img" src="../../images/woman.png" alt="女"/>
             </view>

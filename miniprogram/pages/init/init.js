@@ -86,7 +86,6 @@ Page({
     })
     db.collection("set").add({
       data: {
-        is_founder: true,
         founder: app.globalData.name,
         sex: app.globalData.sex,
         name: this.data.name,
@@ -103,14 +102,14 @@ Page({
           uid: res._id,
         })
         wx.showToast({
-          title: '设置成功',
+          title: '发起成功',
         })
         console.log("database user ADD success, uid: ", res._id);
       },
       fail: err => {
         wx.showToast({
           icon: 'none',
-          title: '设置失败'
+          title: '发起失败'
         })
         console.log("database user ADD failed: ", err);
       }

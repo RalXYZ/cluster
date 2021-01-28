@@ -97,7 +97,7 @@ Page(
     wx.cloud.callFunction({
       name: 'openid'
     }).then( r =>{
-      console.log(r)
+      console.log("openid GET success, uid: ", r);
       const db = wx.cloud.database();
       db.collection("user_info").where({
         _openid: r.result.openid,
@@ -161,7 +161,7 @@ Page(
    * Page event handler function--Called when user drop down
    */
   onPullDownRefresh: function () {
-
+    
   },
 
   /**

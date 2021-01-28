@@ -5,8 +5,8 @@
             <view class="founder">
                 <view class="title">活动发起人</view>
                 <view class="founderInfor">
-                    <image class="founderSex" src="{{activity.sex?imgSrc[0]:imgSrc[1]}}"></image>
-                    <view class="founderName">{{activity.founder}}</view>
+                    <image class="founderSex" src="{{sex?imgSrc[0]:imgSrc[1]}}"></image>
+                    <view class="founderName">{{founder}}</view>
                 </view>
             </view>
         </view>
@@ -15,7 +15,7 @@
                 <view class="title">联系方式</view>
                 <view class="foundertel"></view>
                     <image src="../../images/icons/电话.svg"></image>
-                    <view class="founderNumber">{{activity.tel}}</view>
+                    <view class="founderNumber">{{tel}}</view>
                 </view>
             </view>
         <view class="line"></view>
@@ -23,26 +23,26 @@
         <view class="cluster">
             <view class="sum">
                 <view class="title">活动总人数</view>
-                <view class="num">{{activity.sum}}</view>
+                <view class="num">{{sum}}</view>
             </view>
         </view>
         <view class="cluster">
             <view class="participation">
                 <view class="title">已参加人员</view>
-                <view class="participators">{{activity.participates}}</view>
+                <view class="participators">{{participates}}</view>
             </view>
         </view>
         <view class="line"></view>
 
         <view class="cluster">
             <view class="headline">
-                <view class="title">活动主题：{{activity.type}}</view>
-                <view class="headlineInfor">{{activity.headline}}</view>
+                <view class="title">活动主题：{{type}}</view>
+                <view class="headlineInfor">{{headline}}</view>
             </view>
         </view>
         <view class="cluster">
             <view class="activity">
-                <view class="activityInfor">{{activity.detail}}</view>
+                <view class="activityInfor">{{detail}}</view>
             </view>
         </view>
         <view class="line"></view>
@@ -50,14 +50,14 @@
         <view class="cluster">
             <view class="date">
                 <view class="title">活动日期</view>
-                <view class="dateInfor">{{activity.date}}</view>
+                <view class="dateInfor">{{date}}</view>
             </view>
         </view>
 
         <view class="cluster">
             <view class="time">
                 <view class="title">活动时间</view>
-                <view class="timeInfor">{{activity.time}}</view>
+                <view class="timeInfor">{{time}}</view>
             </view>
         </view>
         <view class="line"></view>
@@ -65,7 +65,7 @@
         <view class="cluster">
             <view class="region">
                 <view class="title">活动地点</view>
-                <view class="regionInfor">{{activity.region}}</view>
+                <view class="regionInfor">{{region}}</view>
             </view>
         </view>
 
