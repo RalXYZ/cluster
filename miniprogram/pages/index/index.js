@@ -149,12 +149,7 @@ Page({
   },
   getUserInfo: function(e) {
     //console.log(e)
-    wx.cloud.callFunction({
-      name: 'openid'
-
-    }).then(res=>{
-      console.log(res)
-    })
+    
     app.globalData.userInfo = e.detail.userInfo
     this.setData({
       userInfo: e.detail.userInfo,

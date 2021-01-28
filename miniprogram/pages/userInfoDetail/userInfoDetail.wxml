@@ -6,25 +6,25 @@
   <form bindsubmit="bindFormSubmit">
     <view class="cluster">
       <text class="title">姓名</text>
-      <textarea placeholder="请填写真实姓名" name="name" placeholder-style="color:#D8B7B5;"/>
+      <textarea placeholder="请填写真实姓名" value="{{name}}" name="name" placeholder-style="color:#D8B7B5;"/>
     </view>
 
     <view class="cluster">
       <text class="title">性别</text>
       <radio-group name="sex">
-        <label><radio value="male" color="#C86083"/>男</label>
-        <label><radio value="female" color="#C86083"/>女</label>
+        <label><radio value="male" checked="{{male}}" color="#C86083"/>男</label>
+        <label><radio value="female" checked="{{female}}" color="#C86083"/>女</label>
       </radio-group>
     </view>
 
     <view class="cluster simple-textarea">
       <text class="title">电话</text>
-      <textarea placeholder="请填写电话号码" name="tel" placeholder-style="color:#D8B7B5;"/>
+      <textarea placeholder="请填写电话号码" value="{{tel}}" name="tel" placeholder-style="color:#D8B7B5;"/>
     </view>
 
     <view class="cluster detail">
       <text class="title">简介</text>
-      <textarea placeholder="请填写较为详细的个人介绍" name="info" placeholder-style="color:#D8B7B5;"/>
+      <textarea placeholder="请填写较为详细的个人介绍" value="{{info}}" name="info" placeholder-style="color:#D8B7B5;"/>
     </view>
     <button form-type="submit"> 提交 </button>
   </form>
